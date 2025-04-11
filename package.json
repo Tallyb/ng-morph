@@ -1,0 +1,66 @@
+{
+  "name": "ng-morph",
+  "version": "0.1.0",
+  "description": "A powerful library for analyzing and transforming Angular templates, inspired by ts-morph",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:tsc": "tsc --outDir .tsc-out",
+    "build:bundle": "rollup -c",
+    "build": "npm run clean && npm run build:tsc && npm run build:bundle",
+    "clean": "rimraf dist .tsc-out",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check ."
+  },
+  "keywords": [
+    "angular",
+    "template",
+    "ast",
+    "transform",
+    "manipulation",
+    "analysis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/compiler": "^19.2.6",
+    "ts-morph": "^21.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.6.1",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ng-morph"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ng-morph/issues"
+  },
+  "homepage": "https://github.com/yourusername/ng-morph#readme"
+}
